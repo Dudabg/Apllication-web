@@ -9,14 +9,27 @@
 
 <body>
     <h1>Criar Novo Produto</h1>
-    <form action="/adicionar_produto" method="POST">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required><br><br>
-        <label for="descricao">Descrição:</label>
-        <textarea id="descricao" name="descricao" required></textarea><br><br>
-        <label for="preco">Preço:</label>
-        <input type="text" id="preco" name="preco" required><br><br>
-        <input type="submit" value="Criar Produto">
-     </form>
+    <form action="/criar" method="POST" class="container">
+    <div class="row">
+          <div class="col-md-6">
+               <input type="text" name="nome" placeholder="nome"  class="form-control">
+          </div>
+
+          <div class="col-md-6">
+               <input type="text" name="descricao" placeholder="descricao"  class="form-control">
+          </div>
+
+          <div class="col-md-6">
+               <input type="text" name="preco" placeholder="preco"  class="form-control">
+
+          </div>
+    </div>
+
+    <br>
+    <div class="row col-xs-12">
+     <button type="submit" class="btn btn-block btn-success">enviar</button>
+    </div>
+
+    </form>
 </body>
 </html>

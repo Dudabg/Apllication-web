@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Produtos</title>
+    <link rel="stylesheet" href="static/style.css">
+    
+</head>
+<body>
+    <h1>Lista de Produtos</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <a href="/criar">Criar novo produto</a>
+            </div>
+            <div class="col-xs-12"></div>
+            <table class="table">
+                <thead>
+                   <tr>
+                    <th>nome</th>
+                    <th>descricao</th>
+                    <th>preco</th>
+                   </tr>
+                </thead>
+                <tbody>
+                    {% for produto in produtos %}
+                    <tr>
+                        <td>{{ produto.nome }}</td>
+                        <td>{{ produto.descricao }}</td>
+                        <td>{{ produto.preco }}</td>
+                        <td>
+                            <a href="/deletar_produto/{{ produto.id }}">Deletar</a>
+                            <a href="/editar/{{ produto.id }}">Atualizar</a>
+
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+   
+</body>
+
+        
+    
+</html>
+

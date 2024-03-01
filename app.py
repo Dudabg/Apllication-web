@@ -1,10 +1,13 @@
 from flask import Flask , render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
+
+
 app = Flask(__name__, template_folder="templates")
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///produtos.sqlite3'
+app.config['SQLALCHEMY_DATABASE_URI'] =  'mysql://duda:63524178@127.0.0.1:3306/produtos'
 
 db = SQLAlchemy(app)
+
 
 class Produto(db.Model):
     id = db.Column('id', db.Integer, primary_key=True, autoincrement=True)
@@ -17,7 +20,6 @@ class Produto(db.Model):
         self.descricao = descricao
         self.preco = preco
 
-   
 @app.route("/")
 def produto():
     produtos=Produto.query.all() 
@@ -34,21 +36,20 @@ def criar():
     return render_template("criar.html")
 
 
+
 @app.route('/editar/<int:id>', methods=['GET', 'POST'])
 def editar(id):
     produto = Produto.query.get(id)
+    #
     if request.method == 'POST':
         produto.nome = request.form['nome']
         produto.descricao = request.form['descricao']
         produto.preco = request.form['preco']
         db.session.add(produto)
         db.session.commit()
-
+        url=url_for
         return redirect(url_for('produto'))  # redirecionar para a rota 'produto' após a atualização
-    return render_template('editar.html', produto=produto, produto_id=id)
-
-
-
+    return render_template('/editar.html', produto=produto, produto_id=id)
 
 
 
@@ -65,11 +66,11 @@ def deletar(id):
 
 
 
-
-
-
 #colocar site no ar
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
     app.run(debug=True)
+
+
+

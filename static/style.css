@@ -1,0 +1,410 @@
+/* INICIO DA PAGINA PRODUTO */
+
+.body__produto {  /*corpo principal da pagina produto */
+    font-family: Arial, sans-serif;
+    background-color: #c13c3c;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #0f0f0f; 
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-x: hidden;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+
+}  
+
+
+.container__produto {/* Estilo para o contêiner principal */
+    margin-top: 50px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa; 
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    color: #000000; 
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-x: hidden;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    
+}
+
+
+h1 { /* Estilo para o título */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 48px; 
+    color: #ff8c00; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    
+}
+
+
+.table { /* Estilo para a tabela */
+    background-color: #fff; 
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    overflow: hidden;
+    padding: 0;
+}
+
+
+th, td { /* Estilo para as células da tabela */
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd; 
+    color: #37493b; 
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 2px solid #fd7b01; 
+    border-right: 1px solid #fd7b01; 
+    border-left: 1px solid #fd7b01; 
+    border-collapse: collapse;
+    overflow: hidden;
+    
+}
+
+
+th { /* Estilo para o cabeçalho da tabela */
+    background-color: #fd7b01; 
+    color: #fff; 
+}
+
+
+tbody tr:hover { /* Estilo para as linhas da tabela ao passar o mouse */
+    background-color: #797676; 
+}
+
+
+
+
+
+.botao1 { /* Estilo para o botão de deletar */
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #870505;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease-in;
+    z-index: 1;
+    font-size: larger;
+    font-weight: bolder;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    color: #dbdbdb;
+    background-color: #ff0000;
+    
+   }
+
+   .botao1::before,
+   .botao1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 100%;
+    transform: skew(15deg);
+    transition: all 0.5s;
+    overflow: hidden;
+    z-index: -1;
+
+   }
+
+   .botao1::before {
+    left: -10px;
+    background: #dfdfdf;
+
+   }
+
+   .botao1::after {
+    right: -10px;
+    background: #ffffff;
+
+   }
+
+   .botao1:hover::before,
+   .botao1:hover::after {
+    width: 58%;
+
+   }
+
+   .botao1:hover span {
+    color: #ffffff;
+    transition: 0.3s;
+
+   }
+
+   .botao1 span {
+    color: #ffffff;
+    font-size: 18px;
+    transition: all 0.3s ease-in;
+
+   }
+
+
+
+
+
+
+
+.botao2 {  /* Estilo para o botão de editar */
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #000df1;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease-in;
+    z-index: 1;
+    background-color: #ffffff;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    
+   }
+   
+   .botao2::before,
+   .botao2::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 100%;
+    transform: skew(15deg);
+    transition: all 0.5s;
+    overflow: hidden;
+    z-index: -1;
+
+   }
+   
+   .botao2::before {
+    left: -10px;
+    background: #051eff;
+   }
+   
+   .botao2::after {
+    right: -10px;
+    background: #0037ff;
+   }
+   
+   .botao2:hover::before,
+   .botao2:hover::after {
+    width: 58%;
+   }
+   
+   .botao2:hover span {
+    color: #e0aaff;
+    transition: 0.3s;
+   }
+   
+   .botao2 span {
+    color: #ffffff;
+    font-size: 18px;
+    transition: all 0.3s ease-in;
+   }
+
+
+
+.botao-criar { /* Estilo para o botão de criar */
+    background-color: #626161; 
+    color: #fff; 
+    padding: 15px 30px; 
+    border-radius: 25px; 
+    text-decoration: none;
+    font-size: 20px; 
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    display: block; 
+    margin: 20px auto; 
+    transition: background-color 0.3s ease;
+}
+
+
+.botao-criar:hover {
+    background-color: #fe5d00; 
+
+}
+
+/* FIM DA PAGINA PRODUTO /*
+
+
+
+
+
+
+
+
+/* COMEÇO PAGINA DE CRIAR*/
+
+.body_criar { /* Body da pagina criar */
+    background-color: #f8f9fa;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #37493b;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.form-control { /* Estilo para os campos de entrada */
+    width: calc(100% - 40px); 
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.container_criar {/* Estilo para o contêiner do formulário */
+    max-width: 1000px; 
+    width: calc(100% - 40px);
+    margin: 20px auto; 
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+
+
+.btn {  /* Estilo para os botões */
+    padding: 12px 0;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+.btn-success { /* Estilo para o botão de enviar */
+    background-color: #0ebd37;
+    color: #fff;
+    border: none;
+}
+
+
+.btn-secondary { /* Estilo para o botão de voltar */
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+
+}
+
+/* FIM DA PAGINA DE CRIAR */
+
+
+
+
+
+
+
+/* COMEÇO DA PAGINA EDITAR */
+
+.body-editar { /* Body da pagina criar */
+    background-color: #f8f9fa;
+    padding: 40px;
+    font-family: Arial, sans-serif;
+    color: #37493b;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-align: center;
+    display:block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+
+
+
+.container-editar {/* Estilo para o contêiner do formulário */
+    max-width: 1000px; 
+    width: calc(100% - 40px);
+    margin: 2px auto; 
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 40px;
+    display: block;
+}
+
+
+/* Estilo para os campos de entrada na página de edição */
+.form-control-editar { /* Estilo para os campos de entrada */
+    width: calc(100% - 40px); 
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+
+
+.btn-success-editar { /* Estilo para o botão de editar */
+    background-color: #009500; 
+    color: #fff; 
+    padding: 15px 30px; 
+    border-radius: 25px; 
+    text-decoration: none;
+    font-size: 20px; 
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    display: block; 
+    margin: 20px auto;
+    transition: background-color 0.3s ease;
+}
+
+
+.btn-success-editar:hover { /* Estilo para o botão de editar ao passar o mouse */
+    background-color: #fe5d00; 
+}
+
+
+/* FIM DA PAGINA EDITAR */

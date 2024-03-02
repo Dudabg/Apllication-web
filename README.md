@@ -63,7 +63,7 @@ A estrutura do projeto segue a seguinte organização:
 4 Configuração do Banco de Dados
 
 - Certifique-se de ter o servidor MySQL instalado e em execução em sua máquina.
-- Crie um banco de dados chamado produtos.
+- Crie um banco de dados chamado user e que tenha a tabela users(id,name,email,password) e a tabela produto(idproduto,nome,descricao,preco) .
 
 
 5 Execução da Aplicação
@@ -73,9 +73,10 @@ A estrutura do projeto segue a seguinte organização:
 
 6 Acesse a aplicação em seu navegador web através do endereço http://localhost:5000.
 
+7 Autenticação de Usuário
+- Foi implementada autenticação de usuário para garantir a segurança dos dados e restringir o acesso às operações CRUD apenas a usuários autenticados.
 
-
-7 Documentação
+8 Documentação
 - A documentação incluída neste README fornece instruções claras e completas sobre como configurar e utilizar a aplicação. Qualquer dúvida ou problema, entre em contato.
 
 

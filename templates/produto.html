@@ -10,8 +10,12 @@
 </head>
 <body class="body_produto">
     <div class="container_produtos">
+       
         
-        <h1>Lista de Produtos</h1>
+        <h1>Lista de Produtos</h1> 
+        <a class="botao-logout" href="/">Logout</a>
+        
+       
         <a class="botao-criar" href="/criar">Criar novo produto</a>
         
         <table class="table">
@@ -23,19 +27,25 @@
                 <th>Ações</th>
                </tr>
             </thead>
+
+
             <tbody>
                 {% for produto in produtos %}
                 <tr>
                     <td>{{ produto.nome }}</td>
                     <td>{{ produto.descricao }}</td>
                     <td>{{ produto.preco }}</td>
+
+
                     <td class="actions">
-                        <button class="botao1"><span><a class="botao-deletar" href="/deletar_produto/{{ produto.id }}">Deletar</a></span></button>
-                        <button class="botao2"><span><a class="botao-editar" href="/editar/{{ produto.id }}">Editar</a></span></button>
-                        
+                        <button class="botao1"><span><a class="botao-deletar" href="/deletar_produto/{{ produto.idproduto }}">Deletar</a></span></button>
+                        <button class="botao2"><span><a class="botao-editar" href="/editar/{{ produto.idproduto }}">Editar</a></span></button>
+ 
                     </td>
                 </tr>
+
                 {% endfor %}
+    
             </tbody>
         </table>
         

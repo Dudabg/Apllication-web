@@ -47,10 +47,25 @@ class User(db.Model, UserMixin):
         return str(self.iduser)  
         # Convertendo o ID para string
 
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+
+        user = User.query.filter_by(email=email).first()
+
+        if user and user.verify_password(password):
+            login_user(user)
+            return redirect(url_for('produto'))  # Redirecionar para a página de produtos após o login
+        else:
+            flash('Credenciais inválidas. Por favor, verifique seu email e senha e tente novamente.', 'error')
+            return render_template('index.html')
+    return render_template('index.html', current_user=current_user)
+
 
 
 @app.route('/login', methods=['GET', 'POST'])
-@login_required
 def login():
     if request.method == 'POST':
         email = request.form['email']
@@ -61,9 +76,9 @@ def login():
             return redirect(url_for('produto'))  # Redireciona para a página de produtos após o login
         else:
             flash('Credenciais inválidas. Por favor, verifique seu email e senha e tente novamente.', 'error')
-            
-            return render_template('login.html', current_user=current_user)  # Redireciona de volta para a página de login em caso de falha no login
-    return render_template('produto.html', current_user=current_user)
+            return render_template('index.html')  # Redireciona de volta para a página de login em caso de falha no login
+    return render_template('index.html')
+
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -84,7 +99,7 @@ def register():
 @login_required
 def logout():
     logout_user()
-    return render_template('login.html', current_user=current_user)
+    return render_template('index.html', current_user=current_user)
 
 
 
@@ -112,19 +127,19 @@ def produto():
 
 
 
-@app.route('/', methods=['GET', 'POST'])
-def home():
-    if request.method == 'POST':
-        email = request.form['email']
-        password = request.form['password']
+# @app.route('/', methods=['GET', 'POST'])
+# def home():
+#     if request.method == 'POST':
+#         email = request.form['email']
+#         password = request.form['password']
 
-        user = User.query.filter_by(email=email).first()
+#         user = User.query.filter_by(email=email).first()
 
-        if not user or not user.verify_password(password):
-            return redirect(url_for('login'))
-        login_user(user)
-        return redirect(url_for('produto'))  # Redirecionar para a página de produtos após o login
-    return render_template('login.html', current_user=current_user)
+#         if not user or not user.verify_password(password):
+#             return redirect(url_for('index'))
+#         login_user(user)
+#         return redirect(url_for('produto'))  # Redirecionar para a página de produtos após o login
+#     return render_template('index.html', current_user=current_user)
 
 
 

@@ -127,21 +127,6 @@ def produto():
 
 
 
-# @app.route('/', methods=['GET', 'POST'])
-# def home():
-#     if request.method == 'POST':
-#         email = request.form['email']
-#         password = request.form['password']
-
-#         user = User.query.filter_by(email=email).first()
-
-#         if not user or not user.verify_password(password):
-#             return redirect(url_for('index'))
-#         login_user(user)
-#         return redirect(url_for('produto'))  # Redirecionar para a página de produtos após o login
-#     return render_template('index.html', current_user=current_user)
-
-
 
 
 
